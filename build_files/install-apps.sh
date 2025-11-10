@@ -29,7 +29,6 @@ declare -A RPM_PACKAGES=(
     llama-cpp \
     neovim \
     nmap \
-    ollama \
     openrgb \
     printer-driver-brlaser \
     qemu-kvm \
@@ -42,20 +41,6 @@ declare -A RPM_PACKAGES=(
     yt-dlp \
     zsh-autosuggestions \
     zsh"
-
-  ["terra"]="\
-    coolercontrol \
-    ghostty \
-    hack-nerd-fonts \
-    starship \
-    ubuntu-nerd-fonts \
-    ubuntumono-nerd-fonts \
-    ubuntusans-nerd-fonts"
-
-  ["rpmfusion-free,rpmfusion-free-updates,rpmfusion-nonfree,rpmfusion-nonfree-updates"]="\
-    audacious \
-    audacious-plugins-freeworld \
-    audacity-freeworld"
 
   ["fedora-multimedia"]="\
     HandBrake-cli \
@@ -78,7 +63,7 @@ declare -A RPM_PACKAGES=(
   ["vscode"]="code"
 )
 
-log "Starting Amy OS build process"
+log "Starting AetherisOS build process"
 
 log "Installing RPM packages"
 mkdir -p /var/opt
@@ -110,8 +95,8 @@ aria2c --dir="$CLI_DIR" --out="cursor-cli.tar.gz" --max-tries=3 --connect-timeou
 tar -xzf "$CLI_DIR/cursor-cli.tar.gz" -C "$CLI_DIR"
 install -m 0755 "$CLI_DIR/cursor" /usr/bin/cursor-cli
 
-log "Adding Amy OS just recipes"
-echo "import \"/usr/share/amyos/just/amy.just\"" >>/usr/share/ublue-os/justfile
+log "Adding AetherisOS just recipes"
+echo "import \"/usr/share/amyos/just/aeth.just\"" >>/usr/share/ublue-os/justfile
 
 log "Hide incompatible Bazzite just recipes"
 for recipe in "install-coolercontrol" "install-openrgb"; do
