@@ -26,7 +26,6 @@ declare -A RPM_PACKAGES=(
     kcalc \
     kgpg \
     ksystemlog \
-    llama-cpp \
     neovim \
     nmap \
     openrgb \
@@ -38,7 +37,6 @@ declare -A RPM_PACKAGES=(
     virt-viewer \
     wireshark \
     yakuake \
-    yt-dlp \
     zsh-autosuggestions \
     zsh"
 
@@ -99,7 +97,7 @@ log "Adding AetherisOS just recipes"
 echo "import \"/usr/share/amyos/just/aeth.just\"" >>/usr/share/ublue-os/justfile
 
 log "Hide incompatible Bazzite just recipes"
-for recipe in "install-coolercontrol" "install-openrgb"; do
+for recipe in "install-openrgb"; do
   if ! grep -l "^$recipe:" /usr/share/ublue-os/just/*.just | grep -q .; then
     echo "Error: Recipe $recipe not found in any just file"
     exit 1
