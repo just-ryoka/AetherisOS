@@ -74,9 +74,7 @@ declare -A RPM_PACKAGES=(
     docker-ce \
     docker-ce-cli \
     docker-compose-plugin"
-
-  ["brave-browser"]="brave-browser"
-  ["cloudflare-warp"]="cloudflare-warp"
+    
   ["vscode"]="code"
 )
 
