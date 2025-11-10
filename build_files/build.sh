@@ -13,7 +13,7 @@ set -ouex pipefail
 dnf5 install -y \
     vim git htop curl wget tmux krita \
     konsole dolphin kate kcalc
-
+dnf5 install -y networkmanager nm-connection-editor
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
