@@ -24,3 +24,4 @@ dnf5 install -y networkmanager nm-connection-editor
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable NetworkManager
